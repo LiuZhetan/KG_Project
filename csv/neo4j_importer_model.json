@@ -1,0 +1,294 @@
+{
+  "version": "0.13.0-beta.0",
+  "graph": {
+    "nodes": [
+      {
+        "id": "n0",
+        "position": {
+          "x": 11,
+          "y": 53
+        },
+        "caption": "Knowledge"
+      },
+      {
+        "id": "n1",
+        "position": {
+          "x": 271.297382546613,
+          "y": 53
+        },
+        "caption": "KeyWord"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "n0",
+        "type": "belong_to",
+        "fromId": "n0",
+        "toId": "n0"
+      },
+      {
+        "id": "n1",
+        "type": "related_to",
+        "fromId": "n1",
+        "toId": "n0"
+      }
+    ]
+  },
+  "dataModel": {
+    "configurations": {
+      "idsToIgnore": []
+    },
+    "fileModel": {
+      "fileSchemas": {
+        "keyword_relations.csv": {
+          "expanded": true,
+          "fields": [
+            {
+              "name": "keyword_id",
+              "type": "integer",
+              "sample": "1",
+              "include": true
+            },
+            {
+              "name": "knowledge_id",
+              "type": "integer",
+              "sample": "3",
+              "include": true
+            },
+            {
+              "name": "count",
+              "type": "integer",
+              "sample": "1",
+              "include": true
+            }
+          ]
+        },
+        "keyword_table.csv": {
+          "expanded": true,
+          "fields": [
+            {
+              "name": "keyword_id",
+              "type": "integer",
+              "sample": "1",
+              "include": true
+            },
+            {
+              "name": "content",
+              "type": "string",
+              "sample": "掌握",
+              "include": true
+            },
+            {
+              "name": "subject",
+              "type": "string",
+              "sample": "化学",
+              "include": true
+            }
+          ]
+        },
+        "knowledge_relations.csv": {
+          "expanded": true,
+          "fields": [
+            {
+              "name": "knowledge_id_from",
+              "type": "integer",
+              "sample": "2",
+              "include": true
+            },
+            {
+              "name": "knowledge_id_to",
+              "type": "integer",
+              "sample": "1",
+              "include": true
+            }
+          ]
+        },
+        "knowledge_table.csv": {
+          "expanded": true,
+          "fields": [
+            {
+              "name": "knowledge_id",
+              "type": "integer",
+              "sample": "1",
+              "include": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "sample": "化学",
+              "include": true
+            },
+            {
+              "name": "level",
+              "type": "integer",
+              "sample": "0",
+              "include": true
+            },
+            {
+              "name": "subject",
+              "type": "string",
+              "sample": "化学",
+              "include": true
+            }
+          ]
+        }
+      }
+    },
+    "graphModel": {
+      "nodeSchemas": {
+        "n0": {
+          "label": "Knowledge",
+          "additionLabels": [],
+          "labelProperties": [],
+          "properties": [
+            {
+              "property": "knowledge_id",
+              "type": "integer",
+              "identifier": "l9cHb6hSvLaw3go-C0z7B"
+            },
+            {
+              "property": "name",
+              "type": "string",
+              "identifier": "JEDdrXEaGgFptfsVQ-xg4"
+            },
+            {
+              "property": "level",
+              "type": "integer",
+              "identifier": "NIGgO1SqlOKZRN5tTQKsU"
+            },
+            {
+              "property": "subject",
+              "type": "string",
+              "identifier": "_5uWne1i_8F33fJ_BaNy5"
+            }
+          ],
+          "key": {
+            "properties": [
+              "l9cHb6hSvLaw3go-C0z7B"
+            ]
+          }
+        },
+        "n1": {
+          "label": "KeyWord",
+          "additionLabels": [],
+          "labelProperties": [],
+          "properties": [
+            {
+              "property": "keyword_id",
+              "type": "integer",
+              "identifier": "GkakVLm4V7ndwAR9M3P85"
+            },
+            {
+              "property": "content",
+              "type": "string",
+              "identifier": "3qR4_G52ybP6XM6GHqaCX"
+            },
+            {
+              "property": "subject",
+              "type": "string",
+              "identifier": "Ot9nd9RdiLpfasZpNwmmf"
+            }
+          ],
+          "key": {
+            "properties": [
+              "GkakVLm4V7ndwAR9M3P85"
+            ]
+          }
+        }
+      },
+      "relationshipSchemas": {
+        "n0": {
+          "type": "belong_to",
+          "sourceNodeSchema": "n0",
+          "targetNodeSchema": "n0",
+          "properties": []
+        },
+        "n1": {
+          "type": "related_to",
+          "sourceNodeSchema": "n1",
+          "targetNodeSchema": "n0",
+          "properties": [
+            {
+              "property": "count",
+              "type": "integer",
+              "identifier": "XWXdL8Yqy1F4OG_5iiPEW"
+            }
+          ]
+        }
+      }
+    },
+    "mappingModel": {
+      "nodeMappings": {
+        "n0": {
+          "nodeSchema": "n0",
+          "fileSchema": "knowledge_table.csv",
+          "mappings": [
+            {
+              "field": "knowledge_id"
+            },
+            {
+              "field": "name"
+            },
+            {
+              "field": "level"
+            },
+            {
+              "field": "subject"
+            }
+          ]
+        },
+        "n1": {
+          "nodeSchema": "n1",
+          "fileSchema": "keyword_table.csv",
+          "mappings": [
+            {
+              "field": "keyword_id"
+            },
+            {
+              "field": "content"
+            },
+            {
+              "field": "subject"
+            }
+          ]
+        }
+      },
+      "relationshipMappings": {
+        "n0": {
+          "relationshipSchema": "n0",
+          "mappings": [],
+          "sourceMappings": [
+            {
+              "field": "knowledge_id_from"
+            }
+          ],
+          "targetMappings": [
+            {
+              "field": "knowledge_id_to"
+            }
+          ],
+          "fileSchema": "knowledge_relations.csv"
+        },
+        "n1": {
+          "relationshipSchema": "n1",
+          "mappings": [
+            {
+              "field": "count"
+            }
+          ],
+          "sourceMappings": [
+            {
+              "field": "keyword_id"
+            }
+          ],
+          "targetMappings": [
+            {
+              "field": "knowledge_id"
+            }
+          ],
+          "fileSchema": "keyword_relations.csv"
+        }
+      }
+    }
+  }
+}

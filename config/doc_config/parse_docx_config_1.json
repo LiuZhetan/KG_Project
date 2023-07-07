@@ -1,0 +1,88 @@
+{
+  "config_name": "parse_docx_config_1",
+  "file_pattern": {
+    "match_pair": {
+      "match_mode": "match_prefix",
+      "pattern":"【淘宝店：品优教学】第.+章 第\\d+讲"
+    },
+    "extract_title": true
+  },
+  "title_list": [
+    {"id": 0,"level": 2,"match_pair": {"match_mode": "match_prefix","pattern": "第\\d+讲\\s"}, "cut_prefix": true},
+    {"id": 1,"level": 3,"match_pair": {"match_mode": "match_prefix","pattern": "考点.\\s"}, "cut_prefix": true},
+    {"id": 2,"level": 4,"match_pair": {"match_mode": "match_prefix","pattern": "知识梳理·夯基础"}, "hidden": true},
+    {"id": 3,"level": 5,"match_pair": {"match_mode": "match_prefix","pattern": "\\d+(\\.|\\．)(\\s)*"}, "cut_prefix": true, "length_limit": 18},
+    {"id": 4,"level": 4,"match_pair": {"match_mode": "search_pattern","pattern": "易错易混"}, "hidden": true},
+    {"id": 5,"level": 4,"match_pair": {"match_mode": "search_pattern","pattern": "深度思考"}, "hidden": true},
+    {"id": 6,"level": 4,"match_pair": {"match_mode": "match_prefix","pattern": "归纳总结"}, "hidden": true},
+    {"id": 7,"level": 4,"match_pair": {"match_mode": "match_prefix","pattern": "归纳总结"}, "hidden": true},
+    {"id": 8,"level": 4,"match_pair": {"match_mode": "match_prefix","pattern": "练后反思"}, "hidden": true},
+    {"id": 9,"level": 4,"match_pair": {"match_mode": "match_prefix","pattern": "规律方法"}, "hidden": true},
+    {"id": 10,"level": 4,"match_pair": {"match_mode": "match_prefix","pattern": "方法技巧"}, "hidden": true}
+  ],
+
+  "control_flow": {
+    "skip_signs": [
+      {
+        "id": 12,
+        "match_pair": {
+          "match_mode": "match_prefix",
+          "pattern": "递进题组·练能力"
+        }
+      },
+      {
+        "id": 13,
+        "match_pair": {
+          "match_mode": "match_prefix",
+          "pattern": "题组.\\s"
+        }
+      }
+    ],
+
+    "ignore_signs": [
+      {
+        "id": 13,
+        "match_pair": {
+          "match_mode": "match_prefix",
+          "pattern": "第.+章\\s"
+        }
+      },
+      {
+        "id": 14,
+        "match_pair": {
+          "match_mode": "match_prefix",
+          "pattern": "答案\\s"
+        }
+      }
+      ,
+      {
+        "id": 15,
+        "match_pair": {
+          "match_mode": "search_pattern",
+          "pattern": "应用体验"
+        }
+      }
+    ],
+
+    "stop_signs": [
+
+    ],
+
+    "end_signs": [
+      {
+        "id": 15,
+        "match_pair": {
+          "match_mode": "match_prefix",
+          "pattern": "真题演练\\s明确考向"
+        }
+      },
+      {
+        "id": 16,
+        "match_pair": {
+          "match_mode": "match_prefix",
+          "pattern": "课时精练\\s巩固提高"
+        }
+      }
+    ]
+  }
+}

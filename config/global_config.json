@@ -1,0 +1,25 @@
+{
+  "doc_dir": "./doc",
+  "doc_config_path": "./config/doc_config",
+  "subject": "化学",
+  "ignored_doc_patterns": [
+    { "match_pair":{"match_mode": "search_pattern","pattern": "专项提能特训"} },
+    { "match_pair":{"match_mode": "search_pattern","pattern": "微专题"} }
+  ],
+  "keyword_extract_patterns": [
+    {
+      "match_pair":
+      {
+        "match_mode": "search_pattern",
+        "pattern": "((([A-Za-z]+\\\\d*)+)|(\\\\(([A-Za-z]+\\\\d*)+\\\\)\\\\d))+'"
+      }
+    },
+    {
+      "match_pair":
+      {
+        "match_mode": "search_pattern",
+        "pattern": "((([A-Za-z]+\\\\d*)+)|(\\\\(([A-Za-z]+\\\\d*)+\\\\)\\\\d))+((\\d?(\\+|＋))|(\\d?(\\-|－)))\\d?"
+      }
+    }
+  ]
+}

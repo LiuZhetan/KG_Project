@@ -1,0 +1,10 @@
+neo4j~=5.8.1
+pandas~=2.0.0
+numpy~=1.23.2
+paddlepaddle-gpu==2.4.2.post117
+paddleocr==2.6.1.3
+paddlenlp==2.5.2
+Flask~=2.2.3
+jupyter
+mammoth==1.5.1
+beautifulsoup4~=4.12.2
